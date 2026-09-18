@@ -44,8 +44,8 @@ python build_ejps_package.py
 |---|---|---|---|
 | 题目 | ≤25 词 | 20 词 | ✅ |
 | 表图数量 | **未设上限** | 4 表 4 图 | ✅ |
-| 篇幅 | "10 to 12 pages"（见下） | 正文 **5,711 词** | ⚠ **见下，原记的 4,951 词是错的** |
-| 摘要 | ≤250 词 | **250 词**（含四个小标题；不含则 244） | ⚠ 顶格，不能再加字 |
+| 篇幅 | "10 to 12 pages"（见下） | 正文 **5,711 词**，约 **35 稿件页** | ⚠ **口径未定，投稿前必须问编辑部；原记的 4,951 词是错的** |
+| 摘要 | ≤250 词 | **250 词**（含四个小标题；不含则 244） | ✅ 顶格，不能再加字 |
 | 摘要小标题 | Introduction / Materials and Methods / Results / **Conclusions** | 同左 | ✅ 已改 |
 | 关键词 | 3–5 | **5 个** | ✅ 已改 |
 | 拼写 | **American English** | 已转（三轮共 64 处；文献题名内 1 处 colour 依原文保留） | ✅ 已改 |
@@ -58,12 +58,50 @@ python build_ejps_package.py
 
 **关于 "(10 to 12 pages)" 的口径**：须知全文未定义指稿件页还是印刷页（已穷举 PDF 中全部 "page" 出现处）。已用实证判定：
 
-从 PubMed 取 EJPS 近期研究论文 12 篇，**印刷页中位 8、IQR 6–9、范围 4–11、无一超过 11**。若按「稿件页」读法（双倍行距 12pt、约 275 词/页），一篇论文全文只能 2,750–3,300 词、排版后约 3–4 印刷页 —— 与实测普遍 8 页矛盾。按「印刷页上限」读法则完全吻合。最接近的同类论文为 *Development of a Clinical Predictive Score for Bracing Outcomes in Children with Pectus Carinatum: A Single-center Retrospective Study*（Eur J Pediatr Surg 2026;36:305–315，**11 页**，单中心回顾性预测评分）。
+从 PubMed 取 EJPS 近期研究论文 12 篇，**印刷页中位 8、IQR 6–9、范围 4–11、无一超过 11**。若按「稿件页」读法（双倍行距 12pt、约 275 词/页），一篇论文全文只能 2,750–3,300 词、排版后约 3–4 印刷页 —— 与实测普遍 8 页矛盾。按「印刷页上限」读法则吻合。最接近的同类论文为 *Development of a Clinical Predictive Score for Bracing Outcomes in Children with Pectus Carinatum: A Single-center Retrospective Study*（Eur J Pediatr Surg 2026;36:305–315，**11 页**，单中心回顾性预测评分）。
 
-**结论：不必砍三分之一正文，但篇幅比原先记的紧。** 原表里的「正文 4,951 词」是错的：按 Word 口径（空白分词）逐段重数，第 3 投改动前是 **5,651 词**，本轮改后 **5,711 词**。按每印刷页约 900 词粗估，正文约 6.3 印刷页，加 4 表 4 图后约 **11–12 页**——仍在实测的 4–11 页区间边缘，但比原先估的 10–11 页更贴上限。两条路：问编辑部确认口径，或再瘦身 500–800 词（Discussion 的 Limitations 六小节与 Negation 那一段最有余地）。要问编辑部的话：
+**⚠ 2026-09-18 更正：上面这个结论下得太满了。** 「按印刷页读法则完全吻合」这句站不住，原因有二。
+
+其一，**字数记错了**。原表里的「正文 4,951 词」不对：按 Word 口径（空白分词）逐段重数，第 3 投改动前是 **5,651 词**，改后 **5,711 词**，差了 760 词。
+
+其二，也更要紧——**须知自己定义了「manuscript」是什么**。原话是：manuscript 包含 *title page、abstract、keywords、graphical abstract、text、references、figure captions 和 tables*，全部 **双倍行距、12 pt、1 英寸页边距**。一份文件先把「manuscript」的版式定死，再给一个以「pages」为单位的长度上限，这个上限相当自然地就是**该版式下的稿件页**。原来记的「须知全文未定义指稿件页还是印刷页」漏掉了这条上下文。
+
+按须知规定的版式实测（Liberation Serif 逐行模拟，与 Times New Roman 度量兼容；23 行/页）：**本稿约 35 页**，上限 10–12 页，**约 3 倍**。
+
+两种读法现在都还活着，各有硬伤：
+
+| 读法 | 支持 | 反证 |
+|---|---|---|
+| **稿件页**（约 35 / 10–12） | 须知在同一份文件里把 manuscript 版式定死为双倍行距 12pt | 按这个读法，实测那 12 篇已发表论文（印刷页中位 8，对应稿件页约 30+）**没有一篇合规**——这条规矩就成了没人遵守的规矩 |
+| **印刷页**（约 11–12 / 10–12） | 与实测 4–11 印刷页的分布吻合，作为上限讲得通 | 须知里「pages」前后文讲的都是稿件版式，不是印刷版面 |
+
+**结论：口径未定，且两种读法下的处置差别很大**（一种是照投，一种是要砍掉三分之二）。这已经不是「要完全确定仍须问」的可选项，而是**投稿前必须先问清楚**的事——问错了最坏是 desk reject。问法：
 
 
 > Could you confirm whether the "10 to 12 pages" stated for Original Articles refers to typeset journal pages or to double-spaced manuscript pages?
+
+## 投稿前核对实测结果（2026-09-18）
+
+下面这些是这次逐项量出来的，不是照抄上一轮的记录：
+
+| 项 | 须知 | 实测 | |
+|---|---|---|---|
+| 题目 | ≤25 词 | 20 词 | ✅ |
+| 摘要 | ≤250 词 | 250 词（含四个小标题） | ✅ 顶格 |
+| 摘要小标题 | Introduction / Materials and Methods / Results / Conclusions | 四个全对 | ✅ |
+| 关键词 | 3–5 | 5 | ✅ |
+| 正文版式 | 双倍行距、12 pt | Times New Roman 12 pt、行距 DOUBLE | ✅ |
+| 页边距 | 1 英寸 | 原为左右 **1.25 英寸** | ✅ **本轮已改为 1.00** |
+| 拼写 | American English | 漏了一处 `per cent` | ✅ **本轮已改 `percent`**（文献题名内的 `colour` 依原文保留，正确） |
+| 文献格式 | AMA、上标、>6 作者 et al、末尾无句点 | 21 条逐条审过，全部合规 | ✅ |
+| 引用编号 | —— | 首次出现顺序 1…21 连续、无漏引、无多余 | ✅ |
+| 表图数量 | 未设上限 | 4 表 4 图 | ✅ |
+| 图格式 | 1200 dpi、CMYK、线条图 TIFF | 四张全是 1200×1200 dpi、CMYK、LZW、8 bit/通道 | ✅ 逐张读文件头核实 |
+| 章节标题 | —— | 正文曾作 `Materials and methods`，与摘要小标题大小写不一致 | ✅ **本轮已统一** |
+| 篇幅 | "10 to 12 pages" | **约 35 稿件页 / 正文 5,711 词** | ⚠ **见下，口径必须先问编辑部** |
+| COI | 每位作者一份 ICMJE 表 | 未准备 | ❌ |
+
+期刊本身也确认过：European Journal of Pediatric Surgery，Thieme 出版，EUPSA（欧洲小儿外科医师协会）会刊——选刊没问题。**主编姓名和投稿系统地址没能在线确认**（容器网关拦掉了 Thieme 站点），cover letter 抬头仍是 "The Editors"，见待办 1。
 
 ## 第 3 投本轮改动（2026-09-18）
 
