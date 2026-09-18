@@ -103,6 +103,33 @@ python build_ejps_package.py
 
 期刊本身也确认过：European Journal of Pediatric Surgery，Thieme 出版，EUPSA（欧洲小儿外科医师协会）会刊——选刊没问题。**主编姓名和投稿系统地址没能在线确认**（容器网关拦掉了 Thieme 站点），cover letter 抬头仍是 "The Editors"，见待办 1。
 
+## 图：投稿用文件与生产用文件必须分开（2026-09-18）
+
+**ScholarOne 上传 Figure 3 报错 "Unable to Convert Image … must be less than 40,000,000 (40 megapixels)"。** 原因是把**生产用**文件当**投稿**文件传了。
+
+| 图 | 1200 dpi CMYK 原件 | 40 MP 上限 |
+|---|---|---|
+| Figure1_flow_v2.tif | 7308×5599 = **40.9 MP** | ✗ 超限（迟早也会报错） |
+| Figure2_degree_v2.tif | 5992×4076 = 24.4 MP | ✓ |
+| Figure3_duration_roc_v2.tif | 10940×4230 = **46.3 MP** | ✗ 超限，已报错 |
+| Figure4_calibration_v2.tif | 4933×4444 = 21.9 MP | ✓ |
+
+两套规格是两回事，别混：
+
+- **投稿上传**（ScholarOne 表单原话）：*minimum print resolution of 300 dpi at 8.5 cm width **or at least 1000 pixels in width***，且首选 .jpg/.tif/.png。这是**下限**，且受 40 MP 硬上限约束。
+- **生产用**（Author Instructions）：1200 dpi、CMYK、TIFF。这是**接收后**出版社排版要的，投稿阶段不需要。
+
+`tools/make_submission_figures.py` 从 1200 dpi CMYK 原件生成投稿版，输出在 `figures_for_submission/`：RGB、600 dpi（仍是表单下限的两倍）、PNG（表单首选类型之一，绕开 TIFF 的条带与色彩空间问题）。
+
+| 投稿版 | 像素 | 百万像素 | 大小 |
+|---|---|---|---|
+| Figure1_flow.png | 3654×2800 | 10.2 | 535 KB |
+| Figure2_degree.png | 2996×2038 | 6.1 | 302 KB |
+| Figure3_duration_roc.png | 5470×2115 | 11.6 | 467 KB |
+| Figure4_calibration.png | 2466×2222 | 5.5 | 373 KB |
+
+四张都已逐张肉眼核对：无 CMYK→RGB 反相，配色、文字、数字均与正文一致。**1200 dpi CMYK 原件原样保留在仓库根目录，接收后交生产用。**
+
 ## 第 3 投本轮改动（2026-09-18）
 
 > **⚠ 这一轮是直接改 docx 的。** 本仓库里只有 9 个交付文件，没有 `.md` 源文件，所以无法按「一条规矩」走 `build_ejps_package.py`。**下次在本机跑 build 脚本之前，必须先把 `REVISIONS_3rd_submission.md` 里的逐条改动搬回项目根目录的 `.md` 源文件**，否则这一轮改动会被重新生成的 docx 覆盖掉。
